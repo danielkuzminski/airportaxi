@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact {
+    color: #444;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact__details {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: underline #ff914a;
+}
+
+.phone {
+    text-decoration: none;
+    color: #444;
+}
