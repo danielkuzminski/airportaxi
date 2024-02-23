@@ -8,29 +8,36 @@ import whatsapp from "../assets/WhatsAppButtonGreenLarge.png"
 import { useState } from "react"
 
 export default function Order() {
-	//whatsapp chat function
 	const [from, setFrom] = useState("")
 	const [to, setTo] = useState("")
 	const [when, setWhen] = useState(null)
 	const [hour, setHour] = useState(null)
 	const [flight, setFlight] = useState("")
-	const [name, setName] = useState("")
-
+	const [contact, setContact] = useState("")
+	
 	const resetForm = () => {
 		setFrom("")
 		setTo("")
 		setWhen(null)
 		setHour(null)
 		setFlight("")
-		setName("")
+		setContact("")
 	}
+	
+	//sending email to bookings@airportaxi.ie
+	// steps: 1.
+	const sendBooking = () => {
 
+	}
+	
+	
+	//whatsapp chat function
 	const handleWhatsapp = e => {
 		e.preventDefault()
 
 		const phonenumber = "353877759009"
 
-		let url = `https://wa.me/${phonenumber}?text=could_you_collect_me_from%20${from}%20and_drop_me_to%20${to}%20on%20${when}%20at%20${hour}%20%20my_flight_number_is%20${flight}%20%20and_my_name_is%20${name}`
+		let url = `https://wa.me/${phonenumber}?text=could%20you%20collect%20me%20from%20${from}%20and%20drop%20me%20to%20${to}%20on%20${when}%20at%20${hour}%20%20my%20flight%20number%20is%20${flight}%20%20and%20my%20contact%20number%20is%20${contact}`
 
 		window.open(url, "_blank").focus()
 
@@ -98,14 +105,14 @@ export default function Order() {
 					/>
 				</label>
 				<label>
-					<span>your name:</span>
+					<span>contact:</span>
 					<input
 						type="text"
-						placeholder="your name"
+						placeholder="your contact number / email"
 						onChange={e => {
-							setName(e.target.value)
+							setContact(e.target.value)
 						}}
-						value={name}
+						value={contact}
 					/>
 				</label>
 				<button className="order__submit">
